@@ -8,7 +8,13 @@ const progressContainer = document.querySelector(".progress-container");
 const title = document.querySelector("#titel");
 const cover = document.querySelector("#cover");
 
-const songs = ["FREEZE", "zombie", "ChristmasEveL"];
+const songs = [
+  "FREEZE",
+  "zombie",
+  "ChristmasEveL",
+  "Fairytale",
+  "Mirror Mirror",
+];
 
 let songIndex = 1;
 

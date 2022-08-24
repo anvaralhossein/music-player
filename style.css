@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -6,31 +15,166 @@
 
 body {
   height: 100%;
-  padding-top: 10rem;
+  padding-top: 1rem;
   margin: 0;
   font-family: "Lato", sans-serif;
-  background-image: linear-gradient(
-    0deg,
-    rgb(247, 247, 247) 23.8%,
-    rgb(252, 221, 221) 92%
-  );
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 5%;
+  align-items: center;
+}
+
+.search-bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  position: absolute;
+  top: 5rem;
+  width: 17rem;
+  height: 25rem;
+  opacity: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in, opcacity 0.3s ease-in;
+  display: none;
+}
+.search-bar form {
+  width: 16rem;
+  background-color: white;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 1rem;
+  border-radius: 49px;
+  padding-left: 3px;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+.search-bar form input {
+  width: 13rem;
+  border: none;
+  outline: none;
+}
+
+.search-bar form input::placeholder {
+  color: #cbc2cf;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.search-icon.click .search-bar {
+  opacity: 1;
+  transform: translateX(14%);
+  display: block;
+}
+
+.playlist-bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  position: absolute;
+  width: 17rem;
+  top: 5rem;
+  height: 25rem;
+  opacity: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in, opcacity 0.3s ease-in;
+  display: none;
+}
+
+.icon-change {
+  width: 22px;
+  height: 22px;
+  color: #bcc2ff;
+}
+
+.icon-change.playlist {
+  width: 30px;
+  height: 30px;
+}
+
+.playlist-icon.click .playlist-bar {
+  opacity: 1;
+  transform: translateX(14%);
+  display: block;
+}
+
+.fav-bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  position: absolute;
+  width: 17rem;
+  top: 5rem;
+  height: 25rem;
+  opacity: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in, opcacity 0.3s ease-in;
+  display: none;
+}
+
+.fav-icon.click .fav-bar {
+  opacity: 1;
+  transform: translateX(14%);
+  display: block;
+}
+
+.music-bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  position: absolute;
+  width: 17rem;
+  top: 5rem;
+  height: 25rem;
+  opacity: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in, opcacity 0.3s ease-in;
+  display: none;
+}
+
+.music-icon.click .music-bar {
+  opacity: 1;
+  transform: translateX(14%);
+  display: block;
+}
+.music-player {
+  background-image: url(/background-image.jpeg);
+  width: 80%;
+  height: 36rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+}
+
+.music-player h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .music-container {
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  box-shadow: 1px 22px 30px #adc6f6;
   display: flex;
   padding: 20px 30px;
   position: relative;
   margin: 100px 0;
   z-index: 10;
+  width: 25.5rem;
+  height: 5.875rem;
 }
 
 .img-container::after {
@@ -116,6 +260,13 @@ body {
 
 .music-info h4 {
   margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.heart-name {
+  justify-content: space-between;
+  align-items: center;
 }
 
 .music-container.play .music-info {
